@@ -7,15 +7,18 @@ import static java.lang.Character.isDigit;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("I would like to give you an example of password:");
+        System.out.println(PasswordGenerate.generateSecurePassword());
 
         boolean j = true;
-
         while (j) {
-            System.out.println("Please give your password:");
+            System.out.println("Please enter your password in the next line:");
             Scanner scanner = new Scanner(System.in);
             String password = scanner.nextLine();
             j = validatePassword(password);
         }
+
+
     }
 
     public static boolean longerThan8(String p) {

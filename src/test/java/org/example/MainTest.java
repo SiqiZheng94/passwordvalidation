@@ -71,4 +71,16 @@ class MainTest {
         boolean actual = Main.oldPopular(p);
         assertTrue(actual);
     }
+    @Test
+    void specialCharacter_returnFalse_whenPAa123(){
+        String p = "Aa123";
+        boolean actual = Main.specialCharacter(p);
+        assertFalse(actual);
+    }
+    @Test
+    void specialCharacter_returnTrue_whenPAa1_2(){
+        String p = "Aa1_2";
+        boolean actual = Main.specialCharacter(p);
+        assertTrue(actual);
+    }
 }

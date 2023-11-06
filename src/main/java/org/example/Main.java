@@ -44,4 +44,13 @@ public class Main {
     }
 
 
+    public static boolean specialCharacter(String p) {
+        String specialC = "!@#$%^&*()_+{}|:<>?-=[]\\;',./`~";
+        for (int i = 0; i < specialC.length(); i++){
+            if(p.contains(String.valueOf(specialC.charAt(i)))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

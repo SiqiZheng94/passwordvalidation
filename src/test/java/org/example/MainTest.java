@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
     @Test
-    void longerThan8_returnTrue_whenP12345678(){
+    void longerThan7_returnTrue_whenP12345678(){
         //GIVEN
         String p = "12345678";
         //WHEN
@@ -48,27 +48,27 @@ class MainTest {
         assertFalse(actual);
     }
     @Test
-    void oldPopular_returnTrue_whenPAa345678(){
+    void wellknow_returnTrue_whenPAa345678(){
         String p = "Aa345678";
-        boolean actual = Main.oldPopular(p);
+        boolean actual = Main.wellknow(p);
         assertTrue(actual);
     }
     @Test
-    void oldPopular_returnFalse_whenPHello3456(){
+    void wellknow_returnFalse_whenPHello3456(){
         String p = "Hello3456";
-        boolean actual = Main.oldPopular(p);
+        boolean actual = Main.wellknow(p);
         assertFalse(actual);
     }
     @Test
-    void oldPopular_returnTrue_whenPAa34567890(){
+    void wellknow_returnTrue_whenPAa34567890(){
         String p = "Aa34567890";
-        boolean actual = Main.oldPopular(p);
+        boolean actual = Main.wellknow(p);
         assertTrue(actual);
     }
     @Test
-    void oldPopular_returnTrue_whenPPassword(){
+    void wellknow_returnTrue_whenPPassword(){
         String p = "Password12";
-        boolean actual = Main.oldPopular(p);
+        boolean actual = Main.wellknow(p);
         assertTrue(actual);
     }
     @Test

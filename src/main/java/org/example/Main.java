@@ -18,7 +18,6 @@ public class Main {
             j = validatePassword(password);
         }
 
-
     }
 
     public static boolean longerThan8(String p) {

@@ -9,6 +9,7 @@ public class PasswordGenerate {
     private static final int length = 8;
 
     public static String generateSecurePassword(){
+
         SecureRandom random = new SecureRandom();
         StringBuilder password = new StringBuilder(length);
         password.append(upper.charAt(random.nextInt(upper.length())));

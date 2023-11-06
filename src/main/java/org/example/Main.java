@@ -8,32 +8,14 @@ import static java.lang.Character.isDigit;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Please give your password:");
-        Scanner scanner = new Scanner(System.in);
-        String password = scanner.nextLine();
-        if (longerThan8(password)){
-            if (digit(password)){
-                if (upperAndLower(password)){
-                    if (!wellknow(password)){
-                        if (specialCharacter(password)){
-                            System.out.println("Your password has been verified!");
-                        } else {
-                            System.out.println("Your password must have at least one special character");
-                        }
-                    } else {
-                        System.out.println("Don't use well-known passwords.");
-                    }
+        boolean j = true;
 
-                } else {
-                    System.out.println("Your password must have at least one lower case letter and one upper.");
-                }
-            } else {
-                System.out.println("Your password must have at least one digit.");
-            }
-        } else {
-            System.out.println("Please give a password longer than 7.");
+        while (j) {
+            System.out.println("Please give your password:");
+            Scanner scanner = new Scanner(System.in);
+            String password = scanner.nextLine();
+            j = validatePassword(password);
         }
-
     }
 
     public static boolean longerThan8(String p) {
@@ -79,4 +61,29 @@ public class Main {
         }
         return false;
     }
+    public static boolean validatePassword(String password) {
+        if (!longerThan8(password)) {
+            System.out.println("Please give a password longer than 7.");
+            return true;
+        }
+        if (!digit(password)) {
+            System.out.println("Your password must have at least one digit.");
+            return true;
+        }
+        if (!upperAndLower(password)) {
+            System.out.println("Your password must have at least one lower case letter and one upper.");
+            return true;
+        }
+        if (wellknow(password)) {
+            System.out.println("Don't use well-known passwords.");
+            return true;
+        }
+        if (!specialCharacter(password)) {
+            System.out.println("Your password must have at least one special character");
+            return true;
+        }
+        System.out.println("Your password has been verified!");
+        return false;
+    }
+
 }

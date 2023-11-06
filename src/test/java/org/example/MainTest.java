@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
     @Test
-    void longerThan7_returnTrue_whenP12345678(){
+    void longerThan8_returnTrue_whenP12345678(){
         //GIVEN
         String p = "12345678";
         //WHEN
